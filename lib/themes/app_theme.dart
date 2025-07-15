@@ -38,10 +38,11 @@ class AppTheme {
         backgroundColor: AppColors.primaryColor,
         foregroundColor: AppColors.white,
         elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        textStyle: TextStyle(
+          fontWeight: AppFontWeight.semiBold,
+          fontFamily: 'GTEesti',
         ),
-        textStyle: TextStyle(fontWeight: AppFontWeight.semiBold, fontFamily: 'GTEesti'),
       ),
     ),
     // Oulined Button theme
@@ -49,51 +50,55 @@ class AppTheme {
       style: OutlinedButton.styleFrom(
         backgroundColor: AppColors.white,
         foregroundColor: AppColors.primaryColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        textStyle: TextStyle(
+          fontWeight: AppFontWeight.semiBold,
+          fontFamily: 'GTEesti',
         ),
-        textStyle: TextStyle(fontWeight: AppFontWeight.semiBold, fontFamily: 'GTEesti'),
-        side: BorderSide(color: AppColors.primaryColor, ),
-        
+        side: BorderSide(color: AppColors.primaryColor),
       ),
     ),
 
     // Text Button theme
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         overlayColor: AppColors.secondaryColor,
         foregroundColor: AppColors.primaryColor,
-        textStyle: TextStyle(fontWeight: AppFontWeight.semiBold, color: AppColors.primaryColor, fontFamily: 'GTEesti')
-      )
+        textStyle: TextStyle(
+          fontWeight: AppFontWeight.semiBold,
+          color: AppColors.primaryColor,
+          fontFamily: 'GTEesti',
+        ),
+      ),
     ),
 
     // Inputfield decoration theme
     inputDecorationTheme: InputDecorationTheme(
-  isDense: true, // ✅ use this instead of isCollapsed
-  filled: true,
-  fillColor: AppColors.white,
-  iconColor: AppColors.primaryColor,
-
-  contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12), // ✅ tweak vertical
-  border: OutlineInputBorder(
-    borderRadius: BorderRadius.circular(12),
-    borderSide: BorderSide(color: AppColors.primaryColor),
-  ),
-  focusedBorder: OutlineInputBorder(
-    borderRadius: BorderRadius.circular(12),
-    borderSide: BorderSide(color: AppColors.primaryColor),
-  ),
-  errorBorder: OutlineInputBorder(
-    borderRadius: BorderRadius.circular(12),
-    borderSide: BorderSide(color: AppColors.error),
-  ),
-  hintStyle: TextStyle(color: AppColors.primaryColor),
-  errorStyle: TextStyle(color: AppColors.error),
-  labelStyle: TextStyle(color: AppColors.gray),
-),
+      isDense: true, // ✅ use this instead of isCollapsed
+      filled: true,
+      fillColor: AppColors.white,
+      iconColor: AppColors.primaryColor,
+      contentPadding: EdgeInsets.symmetric(
+        horizontal: 16,
+        vertical: 12,
+      ), // ✅ tweak vertical
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: AppColors.primaryColor),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: AppColors.primaryColor),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: AppColors.error),
+      ),
+      hintStyle: TextStyle(color: AppColors.primaryColor),
+      errorStyle: TextStyle(color: AppColors.error),
+      labelStyle: TextStyle(color: AppColors.gray),
+    ),
     // Card Theme
     cardTheme: CardThemeData(
       shadowColor: AppColors.gray,
@@ -106,16 +111,16 @@ class AppTheme {
           bottomRight: Radius.circular(16),
         ),
       ),
-      clipBehavior: Clip.antiAlias
+      clipBehavior: Clip.antiAlias,
     ),
 
-    // BottomNavigation Bar theme 
-
+    // BottomNavigation Bar theme
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      backgroundColor: AppColors.white,elevation: 4,
+      backgroundColor: AppColors.white,
+      elevation: 4,
       unselectedItemColor: AppColors.gray,
       selectedItemColor: AppColors.primaryColor,
-      type: BottomNavigationBarType.fixed
-    )
+      type: BottomNavigationBarType.fixed,
+    ),
   );
 }

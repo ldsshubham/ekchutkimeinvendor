@@ -1,8 +1,9 @@
-import 'package:ekchutkimeinvendor/features/home/utils/dashboardcards.dart';
+import 'package:ekchutkimeinvendor/constants/app_colors.dart';
+import 'package:ekchutkimeinvendor/constants/app_sizes.dart';
+import 'package:ekchutkimeinvendor/constants/app_text_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
-
-import '../../../constants/app_colors.dart';
+import '../utils/dashboardtopsection.dart';
+import '../utils/quickactionbuttons.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -15,42 +16,36 @@ class DashboardScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
+
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  DashboardCards(
-                    title: 'Total Orders',
-                    data: '100',
-                    color: AppColors.green.withAlpha(100),
-                    icon: Icon(Iconsax.graph, color: AppColors.green,),
-                  ),
-                  DashboardCards(
-                    title: 'Total Sales',
-                    data: '4749Cr',
-                    color: AppColors.error.withAlpha(100),
-                    icon: Icon(Iconsax.graph, color: AppColors.error,),
-                  ),
-                  
-                ],
+              DashboardTopSection(),
+              SizedBox(height: 8),
+              Text(
+                'Quick Actions',
+                style: AppTextStyles.bodyText.copyWith(
+                  fontSize: AppSizes.fontXL,
+                ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  DashboardCards(
-                    title: 'Total Leads',
-                    data: '989',
-                    color: Colors.blue.withAlpha(100),
-                    icon: Icon(Iconsax.graph, color: Colors.blue,),
-                  ),
-                  DashboardCards(
-                    title: 'Products',
-                    data: '45',
-                    color: Colors.deepOrange.withAlpha(100),
-                    icon: Icon(Iconsax.graph, color: Colors.deepOrange,),
-                  ),
-                  
-                ],
+              SizedBox(height: 10),
+              QuickActionsButtons(
+                title: 'View Upcoming Orders',
+                color: AppColors.green,
+                textColor: AppColors.white,
+                message: 'No orders to show yet',
+              ),
+              SizedBox(height: 10),
+              QuickActionsButtons(
+                title: 'Manage Products',
+                color: AppColors.error.withAlpha(100),
+                textColor: AppColors.white,
+                message: 'Product Feature Will Be Added Soon',
+              ),
+              SizedBox(height: 10),
+              QuickActionsButtons(
+                title: 'View Analytics',
+                color: AppColors.secondaryColor.withAlpha(150),
+                textColor: AppColors.white,
+                message: 'Analytics Feature Will Be Added Soon',
               ),
             ],
           ),
@@ -59,4 +54,3 @@ class DashboardScreen extends StatelessWidget {
     );
   }
 }
-

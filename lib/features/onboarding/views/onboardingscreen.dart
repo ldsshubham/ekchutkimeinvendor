@@ -105,7 +105,7 @@ class OnboardingScreen extends StatelessWidget {
                   return ElevatedButton(
                     onPressed: () {
                       if (isLast) {
-                        Get.offNamed(AppRoutes.homeScreen);
+                        Get.offNamed(AppRoutes.loginScreen);
                       } else {
                         controller.pageController.jumpToPage(
                           onboardingData.length - 1,
