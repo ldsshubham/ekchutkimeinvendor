@@ -58,6 +58,21 @@ class Loginscreen extends StatelessWidget {
                 }, child: Text("Next")),
               ),
               SizedBox(height: 10),
+              Text('- OR -'),
+              SizedBox(height: 10),
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'Phone(OTP)', prefixIcon: Icon(Iconsax.call)
+                ),
+              ),
+              SizedBox(height: 10,),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(onPressed: (){
+                  Get.toNamed(AppRoutes.otpScreen);
+                }, child: Text('Login With OTP')),
+              ),
+              SizedBox(height: 10,),
               SizedBox(
                 width: double.infinity,
                 child: OutlinedButton(
