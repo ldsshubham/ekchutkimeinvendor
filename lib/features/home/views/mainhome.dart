@@ -10,6 +10,8 @@ class MainScreen extends GetView<MyDrawerController> {
   final controller = Get.put(MyDrawerController());
   final BottomNavController navController = Get.put(BottomNavController());
 
+  MainScreen({super.key});
+
   
 
   @override
