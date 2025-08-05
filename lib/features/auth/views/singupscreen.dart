@@ -32,13 +32,7 @@ class SignupScreen extends StatelessWidget {
                   prefixIcon: Icon(Iconsax.message),
                 ),
               ),
-              SizedBox(height: 16),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: "Mobile Number",
-                  prefixIcon: Icon(Iconsax.call),
-                ),
-              ),
+             
               SizedBox(height: 16),
               TextFormField(
                 obscureText: obsText,
@@ -59,6 +53,22 @@ class SignupScreen extends StatelessWidget {
                    Get.toNamed(AppRoutes.otpScreen);
                 }, child: Text("Next")),
               ),
+              SizedBox(height: 10),
+              Text('- OR -'),
+              SizedBox(height: 10),
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'Phone(OTP)', prefixIcon: Icon(Iconsax.call)
+                ),
+              ),
+              SizedBox(height: 10,),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(onPressed: (){
+                  Get.toNamed(AppRoutes.otpScreen);
+                }, child: Text('Signup With OTP')),
+              ),
+
               SizedBox(height: 10),
               SizedBox(
                 width: double.infinity,
