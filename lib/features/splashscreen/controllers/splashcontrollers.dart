@@ -14,7 +14,7 @@ void onReady(){
 }
 void _navigateToHome(){
     Future.delayed(Duration(seconds:2), (){
-        Get.offNamed(AppRoutes.onboardingScreen);
+        Get.offNamed(AppRoutes.loginScreen);
     });
 }
 }

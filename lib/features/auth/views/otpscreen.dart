@@ -1,12 +1,13 @@
+import 'package:ekchutkimeinvendor/constants/app_colors.dart';
 import 'package:ekchutkimeinvendor/constants/app_sizes.dart';
 import 'package:ekchutkimeinvendor/constants/app_text_styles.dart';
-import 'package:ekchutkimeinvendor/routes/routes.dart';
+import 'package:ekchutkimeinvendor/features/auth/controllers/login_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-
 class OtpScreen extends StatelessWidget {
-  const OtpScreen({super.key});
+  final LoginController controller = Get.put(LoginController());
+  OtpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,25 +22,46 @@ class OtpScreen extends StatelessWidget {
                 'Enter the OTP',
                 style: AppTextStyles.bodyText.copyWith(
                   fontSize: AppSizes.fontXL,
-                ),  
+                ),
               ),
               SizedBox(height: 20),
-              TextField(decoration: InputDecoration(labelText: "Enter OTP"),),
-              SizedBox(height: 16,),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(onPressed: () {
-                  Get.toNamed(AppRoutes.homeScreen);
-                }, child: Text("Login")),
+              TextField(
+                controller: controller.otpController,
+                decoration: InputDecoration(labelText: "Enter OTP"),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 16),
               SizedBox(
                 width: double.infinity,
-                child: OutlinedButton(
+                child: ElevatedButton(
                   onPressed: () {
-                    Get.toNamed(AppRoutes.signupScreen);
+                    if (controller.otpController.text.isEmpty) {
+                      Get.snackbar(
+                        "Error",
+                        "Please enter the OTP",
+                        backgroundColor: AppColors.error,
+                        colorText: AppColors.white,
+                        snackPosition: SnackPosition.TOP,
+                      );
+                      return;
+                    }
+                    print("OTP entered: ${controller.otpController.text}");
+                    controller.verifyOtpAndSaveOtp(
+                      controller.otpController.text,
+                    );
                   },
-                  child: Text("Don't have an account? Create Account"),
+                  child: Text("Next"),
+                ),
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: TextButton(
+                  onPressed: () {
+                    controller.requestOtp();
+                  },
+                  child: Text(
+                    "Resend OTP",
+                    style: TextStyle(color: Colors.blue),
+                  ),
                 ),
               ),
             ],

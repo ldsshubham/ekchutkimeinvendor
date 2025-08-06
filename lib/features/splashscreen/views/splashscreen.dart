@@ -1,24 +1,20 @@
-
 import 'package:ekchutkimeinvendor/constants/strings.dart';
 import 'package:ekchutkimeinvendor/features/splashscreen/controllers/splashcontrollers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+class Splashscreen extends GetView<SplashController> {
+  @override
+  final drawerController = Get.put(SplashController());
 
-class Splashscreen extends GetView<SplashController>{
-
-@override
-final controller = Get.put(SplashController());
-
-Splashscreen({super.key});
+  Splashscreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      body: SafeArea(child: Center(
-        child: Image.asset(AppString.logo, height: 150,),
-      )),
+      body: SafeArea(
+        child: Center(child: Image.asset(AppString.logo, height: 150)),
+      ),
     );
   }
 }

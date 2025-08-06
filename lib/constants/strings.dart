@@ -1,4 +1,5 @@
 class AppString {
+  static const baseUrl = "http://jsmglobe.com:5000/";
   static const logo = "assets/images/mainlogo.jpg";
   static const appName = "Ek Chutki Mein";
   static const images = "assets/images/";

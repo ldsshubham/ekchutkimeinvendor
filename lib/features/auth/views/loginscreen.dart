@@ -1,16 +1,18 @@
+// ignore_for_file: avoid_print
+
 import 'package:ekchutkimeinvendor/constants/app_sizes.dart';
 import 'package:ekchutkimeinvendor/constants/app_text_styles.dart';
-import 'package:ekchutkimeinvendor/routes/routes.dart';
+import 'package:ekchutkimeinvendor/features/auth/controllers/login_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class Loginscreen extends StatelessWidget {
-  const Loginscreen({super.key});
+  final LoginController loginController = Get.put(LoginController());
+  Loginscreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final bool obsText = true;
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -24,64 +26,36 @@ class Loginscreen extends StatelessWidget {
                   fontSize: AppSizes.fontXL,
                 ),
               ),
-              SizedBox(height: 20),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: "Email",
-                  prefixIcon: Icon(Iconsax.message),
-                ),
-              ),
-              SizedBox(height: 16),
-              TextFormField(
-                obscureText: obsText,
-                decoration: InputDecoration(
-                  labelText: "Password",
-                  prefixIcon: Icon(Iconsax.lock),
-                  suffixIcon: IconButton(
-                    onPressed: () {},
-                    icon: Icon(Iconsax.eye),
-                  ),
-                ),
-              ),
-              Container(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text('Forget Password', style: TextStyle(color: Colors.deepPurple),),
-                ),
-              ),
 
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(onPressed: () {
-                  Get.toNamed(AppRoutes.otpScreen);
-                }, child: Text("Next")),
-              ),
-              SizedBox(height: 10),
-              Text('- OR -'),
-              SizedBox(height: 10),
+              SizedBox(height: 16),
+
               TextField(
+                controller: loginController.mobileController,
                 decoration: InputDecoration(
-                  labelText: 'Phone(OTP)', prefixIcon: Icon(Iconsax.call)
+                  labelText: 'Phone(OTP)',
+                  prefixIcon: Icon(Iconsax.call),
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 10),
               SizedBox(
                 width: double.infinity,
-                child: ElevatedButton(onPressed: (){
-                  Get.toNamed(AppRoutes.otpScreen);
-                }, child: Text('Login With OTP')),
-              ),
-              SizedBox(height: 10,),
-              SizedBox(
-                width: double.infinity,
-                child: OutlinedButton(
+                child: ElevatedButton(
                   onPressed: () {
-                    Get.toNamed(AppRoutes.signupScreen);
+                    print("Button pressed");
+                    if (loginController.mobileController.text.isEmpty) {
+                      Get.snackbar(
+                        "Error",
+                        "Please enter your phone number",
+                        snackPosition: SnackPosition.TOP,
+                      );
+                      return;
+                    }
+                    loginController.requestOtp();
                   },
-                  child: Text("Don't have an account? Create Account"),
+                  child: Text('Next'),
                 ),
               ),
+              SizedBox(height: 10),
             ],
           ),
         ),

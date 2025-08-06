@@ -3,7 +3,6 @@ import 'package:ekchutkimeinvendor/constants/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-
 import '../../../routes/routes.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -12,6 +11,7 @@ class SignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bool obsText = true;
+    
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),

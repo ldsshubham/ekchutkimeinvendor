@@ -122,5 +122,10 @@ class AppTheme {
       selectedItemColor: AppColors.primaryColor,
       type: BottomNavigationBarType.fixed,
     ),
+    chipTheme: ChipThemeData(
+      backgroundColor: AppColors.white,
+      showCheckmark: true,
+      checkmarkColor: AppColors.green,
+    ),
   );
 }

@@ -20,7 +20,7 @@ class DashboardCards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width*.4,
+      width: MediaQuery.of(context).size.width * .4,
       padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: AppColors.white,

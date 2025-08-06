@@ -1,7 +1,5 @@
-
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-
 import '../../../constants/app_colors.dart';
 import '../../../constants/app_sizes.dart';
 import '../../../constants/app_text_styles.dart';
@@ -36,13 +34,13 @@ class ProfileScreen extends StatelessWidget {
                         color: AppColors.white,
                       ),
                     ),
-                    SizedBox(height: MediaQuery.of(context).size.height * .020),
+                    SizedBox(height: MediaQuery.of(context).size.height * .010),
                     CircleAvatar(
                       radius: 75,
                       // foregroundImage: IconButton(onPressed: onPressed, icon: icon),
                       backgroundImage: AssetImage('assets/images/mainlogo.jpg'),
                     ),
-                    SizedBox(height: MediaQuery.of(context).size.height * .02),
+                    SizedBox(height: MediaQuery.of(context).size.height * .01),
                     Text(
                       'User Name',
                       style: AppTextStyles.bodyText.copyWith(
@@ -50,13 +48,13 @@ class ProfileScreen extends StatelessWidget {
                         color: AppColors.white,
                       ),
                     ),
-                    Text(
-                      '+91 9876543210',
-                      style: AppTextStyles.caption.copyWith(
-                        fontSize: AppSizes.fontM,
-                        color: AppColors.green,
-                      ),
-                    ),
+                    // Text(
+                    //   '+91 9876543210',
+                    //   style: AppTextStyles.caption.copyWith(
+                    //     fontSize: AppSizes.fontM,
+                    //     color: AppColors.green,
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
@@ -74,7 +72,7 @@ class ProfileScreen extends StatelessWidget {
                     topRight: Radius.circular(24),
                   ),
                 ),
-                height: MediaQuery.of(context).size.height * .45,
+                height: MediaQuery.of(context).size.height * .5,
                 width: MediaQuery.of(context).size.width,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -93,7 +91,7 @@ class ProfileScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(12),
                           color: AppColors.success.withAlpha(125),
                         ),
-                        child: Icon(Iconsax.user, color: AppColors.green,),
+                        child: Icon(Iconsax.user, color: AppColors.green),
                       ),
                       title: Text('Profile'),
                       trailing: Icon(Iconsax.arrow_right_3),
@@ -103,9 +101,9 @@ class ProfileScreen extends StatelessWidget {
                         padding: EdgeInsets.all(8),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          color: AppColors.error.withOpacity(.4),
+                          color: AppColors.error.withAlpha(75),
                         ),
-                        child: Icon(Iconsax.box, color: AppColors.error,),
+                        child: Icon(Iconsax.box, color: AppColors.error),
                       ),
                       title: Text('My Orders'),
                       trailing: Icon(Iconsax.arrow_right_3),
@@ -115,9 +113,12 @@ class ProfileScreen extends StatelessWidget {
                         padding: EdgeInsets.all(8),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          color: AppColors.gray.withOpacity(.5),
+                          color: AppColors.gray.withAlpha(90),
                         ),
-                        child: Icon(Iconsax.coin, color: AppColors.primaryColor,),
+                        child: Icon(
+                          Iconsax.coin,
+                          color: AppColors.primaryColor,
+                        ),
                       ),
                       title: Text('Leads'),
                       trailing: Icon(Iconsax.arrow_right_3),
@@ -127,9 +128,9 @@ class ProfileScreen extends StatelessWidget {
                         padding: EdgeInsets.all(8),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          color: Colors.blue.withOpacity(.4),
+                          color: Colors.blue.withAlpha(75),
                         ),
-                        child: Icon(Iconsax.lock, color: Colors.blue[900],),
+                        child: Icon(Iconsax.lock, color: Colors.blue[900]),
                       ),
                       title: Text('Change Password'),
                       trailing: Icon(Iconsax.arrow_right_3),
@@ -139,7 +140,7 @@ class ProfileScreen extends StatelessWidget {
                         padding: EdgeInsets.all(8),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          color: Colors.yellow.withOpacity(.5),
+                          color: Colors.yellow.withAlpha(50),
                         ),
                         child: Icon(Iconsax.language_circle),
                       ),
